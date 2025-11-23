@@ -39,6 +39,21 @@ nav {
   margin-top: 10px;
 }
 
+/* Navigation spans for separator */
+nav span {
+  display: flex;
+  align-items: center;
+}
+
+/* Add separator BEFORE every item except the first */
+nav span + span::before {
+  content: "|";
+  color: #f4e842;
+  margin: 0 8px;
+  font-weight: 700;
+}
+
+/* Navigation links */
 nav a {
   color: #f4e842;
   background-color: #000;
@@ -50,16 +65,6 @@ nav a {
   border: 2px solid #f4e842;
   transition: all 0.2s ease-in-out;
   white-space: nowrap;
-}
-
-/* ===== FIXED: Proper centered "|" separators ===== */
-nav a + a::before {
-  content: "|";
-  color: #f4e842;
-  margin: 0 8px;
-  font-weight: 700;
-  position: relative;
-  top: 0;
 }
 
 nav a:hover {
@@ -149,11 +154,11 @@ button:hover {
   position: fixed;
   top: 10px;
   left: 10px;
-  height: 80px;
+  height: 80px;       
   z-index: 2000;
   border: 2px solid #f4e842;
   border-radius: 8px;
-  background-color: #000;
+  background-color: #000; 
   padding: 5px;
   box-shadow: 0 0 12px rgba(255, 230, 0, 0.7);
 }
