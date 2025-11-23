@@ -10,17 +10,22 @@ body {
 
 /* ===== Header styling ===== */
 header {
-  background: #000000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: #000;
   color: #f4e842; /* Yellow */
-  padding: 25px 10px;
-  text-align: center;
+  padding: 15px 10px;
   border-bottom: 3px solid #f4e842;
   box-shadow: 0 0 15px rgba(255, 230, 0, 0.4);
+  text-align: center;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2.3rem;
+  flex: 1 1 100%;
+  margin: 10px 0;
+  font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -28,19 +33,23 @@ header h1 {
 
 /* ===== Navigation ===== */
 nav {
-  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 nav a {
   color: #f4e842;             /* Yellow text */
   background-color: #000;     /* Black background */
-  margin: 0 10px;
+  margin: 5px;
   text-decoration: none;
   font-weight: 600;
   padding: 8px 14px;
   border-radius: 4px;
   border: 2px solid #f4e842;
-  transition: all 0.2s ease-in-out; /* Smooth + fast */
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;        /* Prevent line breaks inside links */
 }
 
 nav a:hover {
@@ -130,7 +139,7 @@ button:hover {
   position: fixed;
   top: 10px;
   left: 10px;
-  height: 100px;       /* adjust size if needed */
+  height: 80px;       /* adjust size for mobile */
   z-index: 2000;      /* keeps it above everything */
   border: 2px solid #f4e842;
   border-radius: 8px;
@@ -139,3 +148,24 @@ button:hover {
   box-shadow: 0 0 12px rgba(255, 230, 0, 0.7);
 }
 
+/* ===== Responsive adjustments ===== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    margin: 3px;
+  }
+
+  #site-logo {
+    height: 60px;
+  }
+
+  main {
+    padding: 20px;
+    margin: 20px 10px;
+  }
+}
